@@ -11,15 +11,17 @@ This code is experimental on a good day... on most days it will casually eat you
 JSON to filesystem Mapping
 --------------------------
 
-JSON      filesystem   user.json.type
+::
 
-string => file      => string
-number => file      => number
-object => directory => object
-array  => directory => array
-true   => file      => boolean
-false  => file      => boolean
-null   => file      => null
+ JSON      filesystem   user.json.type
+
+ string => file      => string
+ number => file      => number
+ object => directory => object
+ array  => directory => array
+ true   => file      => boolean
+ false  => file      => boolean
+ null   => file      => null
 
 All filesystem entries support the xattr 'user.json.type' (e.g. user.json.type = 'string') which indicates the JSON type of the filesystem entry. In this way, the JSON type is preserved.
 
@@ -38,18 +40,22 @@ The default type of new directories is 'object'.
 File Truncation
 ---------------
 
-string  => Empty string.
-number  => 0
-boolean => false
-null    => null
+::
+
+ string  => Empty string.
+ number  => 0
+ boolean => false
+ null    => null
 
 File Appending
 --------------
 
-string  => Append to the end of the string.
-number  => Summation of existing number and new number.
-boolean => XOR of existing boolean and new boolean.
-null    => Always equals null.
+::
+
+ string  => Append to the end of the string.
+ number  => Summation of existing number and new number.
+ boolean => XOR of existing boolean and new boolean.
+ null    => Always equals null.
 
 Type Conversion
 ---------------
