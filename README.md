@@ -1,4 +1,0 @@
-jsonfs
-======
-
-JSON Fuse Filesystem
